@@ -1,0 +1,14 @@
+{
+    "module": "health_tracking",
+    "status": "active",
+    "fields": {
+        "patient_id": "string",
+        "symptoms": [
+            "tremor",
+            "rigidity",
+            "bradykinesia"
+        ],
+        "timestamp": "ISO8601"
+    },
+    "validated_by": "SYSTEMEOSIA"
+}
