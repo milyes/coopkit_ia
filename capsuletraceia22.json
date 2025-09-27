@@ -1,0 +1,20 @@
+{
+  "capsule": {
+    "titre": "Activation IA22 – Trace cockpit certifiée",
+    "auteur": "SYSTEMEOSIA / CoopKit IA",
+    "date": "2025-09-25",
+    "plateforme": "Android 15.0 + Termux",
+    "script": "lancer_ia22.sh",
+    "modele": "IA22 local",
+    "audit": "symbolique activé",
+    "trace": {
+      "source": "~/ia22_logs/trace.log",
+      "copie": "~/SYSTEMEOSIA/cockpit/audit_ia22.log",
+      "contenu": "IA22 lancé le 2025-09-25 avec audit symbolique."
+    },
+    "statut": "Activation réussie, diffusion cockpit confirmée",
+    "souverainete": "Aucune dépendance externe, aucune fuite, aucune collecte",
+    "qr": "IA22_ACTIVATION_2025_QR.png",
+    "slogan": "🧬 IA22 activé – trace cockpit certifiée"
+  }
+}

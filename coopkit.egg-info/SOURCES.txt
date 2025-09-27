@@ -1,0 +1,8 @@
+generate_format.py
+setup.py
+coopkit.egg-info/PKG-INFO
+coopkit.egg-info/SOURCES.txt
+coopkit.egg-info/dependency_links.txt
+coopkit.egg-info/entry_points.txt
+coopkit.egg-info/requires.txt
+coopkit.egg-info/top_level.txt

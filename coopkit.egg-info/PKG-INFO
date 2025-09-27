@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: coopkit
+Version: 1.0.0
+Summary: Cockpit SYSTEMEOSIA – CoopKit IA Santé Éthique
+Author: Mohammed Ilyes Zoubirou
+Author-email: contact@systemeosia.org
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Dist: qrcode
+Requires-Dist: fpdf
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: summary
