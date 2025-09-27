@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Nom du fichier à sceller
+# Capsule cible
 FILE="capsules/capsule_health.json"
 
-# Vérification d'existence
+# Vérification
 if [ ! -f "$FILE" ]; then
   echo "❌ Capsule introuvable : $FILE"
   exit 1
@@ -13,16 +13,21 @@ fi
 HASH=$(sha256sum "$FILE" | awk '{print $1}')
 DATE=$(date +"%Y-%m-%d %H:%M:%S")
 
-# Création du manifeste
-echo "{
-  \"capsule\": \"$FILE\",
-  \"sha256\": \"$HASH\",
-  \"scellé_le\": \"$DATE\",
-  \"signature\": \"GEMINI CORE 2.6 PRO\",
-  \"architecte\": \"Zoubirou Mohammed Ilyes\"
-}" > capsule_manifest.json
+# Création du manifeste JSON
+cat <<EOF > capsule_manifest.json
+{
+  "capsule_id": "coopkit_capsule_health_IA22",
+  "architect": "Zoubirou Mohammed Ilyes",
+  "activation_date": "$DATE",
+  "module": "IA22_LOGIC_LAUNCHER",
+  "sha256_hash": "$HASH",
+  "status": "Scellé",
+  "signature": "GEMINI CORE 2.6 PRO",
+  "traceboard_link": "https://milyes.github.io/TRACEBOARD.html",
+  "github_repo": "https://github.com/milyes/coopkit"
+}
+EOF
 
 echo "✅ Capsule scellée avec succès."
 echo "📦 SHA256 : $HASH"
-echo "📝 Manifeste : capsule_manifest.json"
-
+echo "📝 Manifeste généré : capsule_manifest.json"

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SYSTEMEOSIA – JSON Launcher IA</title>
+  <style>
+    body {
+      background-color: #0f0f1a;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2em;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffd5;
+      margin-bottom: 1em;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #1a1a2e;
+      padding: 2em;
+      border-radius: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 1em;
+      font-weight: bold;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 0.8em;
+      margin-top: 0.5em;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #00ffd5;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1.5em;
+    }
+    button:hover {
+      background-color: #00c4a7;
+    }
+    pre {
+      background-color: #2a2a44;
+      padding: 1em;
+      border-radius: 5px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 SYSTEMEOSIA – JSON Launcher IA</h1>
+  <div class="container">
+    <label for="moduleName">Nom du module</label>
+    <input type="text" id="moduleName" placeholder="Ex: PARA-TRACE">
+
+    <label for="signalLevel">Niveau du signal</label>
+    <input type="number" id="signalLevel" placeholder="Ex: 9.6">
+
+    <label for="description">Description</label>
+    <textarea id="description" rows="4" placeholder="Décris le signal, le contexte, l'interprétation..."></textarea>
+
+    <button onclick="generateJSON()">Générer Capsule JSON</button>
+
+    <pre id="output"></pre>
+  </div>
+
+  <script>
+    function generateJSON() {
+      const module = document.getElementById('moduleName').value;
+      const level = document.getElementById('signalLevel').value;
+      const desc = document.getElementById('description').value;
+
+      const capsule = {
+        module: module || "UNDEFINED",
+        signal_level: parseFloat(level) || 0,
+        timestamp: new Date().toISOString(),
+        description: desc || "Aucune description fournie",
+        certified_by: "SYSTEMEOSIA",
+        audit: true,
+        visual: "badge.png",
+        qr_link: "https://github.com/ilyesz/" + module.toLowerCase()
+      };
+
+      document.getElementById('output').textContent = JSON.stringify(capsule, null, 2);
+    }
+  </script>
+</body>
+</html>      background-color: #00ffd5;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00c4a7;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Recherche IA – Billets Montréal → Oran</h1>
+  <form onsubmit="launchSearch(); return false;">
+    <label for="date">Date de départ</label>
+    <input type="date" id="date" required>
+
+    <label for="retour">Date de retour</label>
+    <input type="date" id="retour">
+
+    <button type="submit">Trouver les meilleurs prix</button>
+  </form>
+
+  <iframe id="resultFrame" src=""></iframe>
+
+  <script>
+    function launchSearch() {
+      const date = document.getElementById('date').value;
+      const retour = document.getElementById('retour').value;
+      const baseURL = "https://www.google.com/search?q=";
+      const query = `vols pas chers Montréal Oran ${date} ${retour}`;
+      const encoded = encodeURIComponent(query);
+      document.getElementById('resultFrame').src = baseURL + encoded;
+    }
+  </script>
+</body>
+</html>
